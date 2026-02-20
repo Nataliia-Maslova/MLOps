@@ -1,0 +1,14 @@
+FROM python:3.9
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libglib2.0-0 libsm6 libxrender1 libxext6
+
+COPY model.pt .
+COPY inference.py .
+
+RUN pip install torch torchvision pillow
+
+ENTRYPOINT ["python", "inference.py"]

@@ -1,0 +1,20 @@
+IMAGE COMPARISON
+
+1. Fat image:
+Size: 1.3GB
+Layers: 10+
+Contains build-essential, apt cache, full Python image.
+Pros: Simple build.
+Cons: Large size, more vulnerabilities.
+
+2. Slim image:
+Size: 700MB
+Layers: fewer
+Multi-stage build.
+No build tools in final image.
+
+Optimization ideas:
+- Use specific torch CPU-only wheel
+- Remove unused torchvision components
+- Use distroless base image
+- Use smaller Python version

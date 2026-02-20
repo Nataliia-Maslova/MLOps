@@ -1,0 +1,20 @@
+# ===== STAGE 1 =====
+FROM python:3.11-slim as builder
+
+WORKDIR /app
+
+COPY model.pt .
+COPY inference.py .
+
+RUN pip install --no-cache-dir torch torchvision pillow
+
+# ===== STAGE 2 =====
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY --from=builder /usr/local/lib/python3.11 /usr/local/lib/python3.11
+COPY model.pt .
+COPY inference.py .
+
+ENTRYPOINT ["python", "inference.py"]
