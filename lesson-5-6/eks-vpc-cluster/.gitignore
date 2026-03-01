@@ -1,12 +1,5 @@
-# Terraform
 .terraform/
 *.tfstate
 *.tfstate.*
 crash.log
-
-# Terraform lock file
 !.terraform.lock.hcl
-
-# OS
-.DS_Store
-Thumbs.db
