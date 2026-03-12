@@ -1,0 +1,13 @@
+configs:
+  cm:
+    timeout.reconciliation: 30s
+
+server:
+  service:
+    type: ClusterIP
+
+  extraArgs:
+    - --insecure
+
+redis:
+  enabled: true
