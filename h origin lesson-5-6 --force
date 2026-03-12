@@ -1,0 +1,61 @@
+[33m51fc03a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlesson-5-6[m[33m)[m Remove terraform cache and providers from repo
+ lesson-5-6/eks-vpc-cluster/.gitignore              |   9 [32m+[m[31m-[m
+ .../eks-vpc-cluster/.terraform/modules/eks.eks     |   1 [31m-[m
+ .../eks-vpc-cluster/.terraform/modules/eks.eks.kms |   1 [31m-[m
+ .../.terraform/modules/modules.json                |   1 [31m-[m
+ .../eks-vpc-cluster/.terraform/modules/vpc.vpc     |   1 [31m-[m
+ .../aws/5.100.0/windows_amd64/LICENSE.txt          | 375 [31m---------------------[m
+ .../terraform-provider-aws_v5.100.0_x5.exe         | Bin [31m718820352[m -> [32m0[m bytes
+ .../cloudinit/2.3.7/windows_amd64/LICENSE.txt      | 375 [31m---------------------[m
+ .../terraform-provider-cloudinit_v2.3.7_x5.exe     | Bin [31m16006496[m -> [32m0[m bytes
+ .../hashicorp/null/3.2.4/windows_amd64/LICENSE.txt | 375 [31m---------------------[m
+ .../terraform-provider-null_v3.2.4_x5.exe          | Bin [31m15866712[m -> [32m0[m bytes
+ .../time/0.13.1/windows_amd64/LICENSE.txt          | 375 [31m---------------------[m
+ .../terraform-provider-time_v0.13.1_x5.exe         | Bin [31m16072032[m -> [32m0[m bytes
+ .../hashicorp/tls/4.2.1/windows_amd64/LICENSE.txt  | 375 [31m---------------------[m
+ .../terraform-provider-tls_v4.2.1_x5.exe           | Bin [31m19264136[m -> [32m0[m bytes
+ .../eks-vpc-cluster/.terraform/terraform.tfstate   |  55 [31m---[m
+ 16 files changed, 1 insertion(+), 1942 deletions(-)
+[33m12c6048[m Add Terraform VPC + EKS project (lesson 5-6)
+ lesson-5-6/eks-vpc-cluster/.gitignore              |  12 [32m+[m
+ lesson-5-6/eks-vpc-cluster/.terraform.lock.hcl     | 105 [32m++++++[m
+ .../eks-vpc-cluster/.terraform/modules/eks.eks     |   1 [32m+[m
+ .../eks-vpc-cluster/.terraform/modules/eks.eks.kms |   1 [32m+[m
+ .../.terraform/modules/modules.json                |   1 [32m+[m
+ .../eks-vpc-cluster/.terraform/modules/vpc.vpc     |   1 [32m+[m
+ .../aws/5.100.0/windows_amd64/LICENSE.txt          | 375 [32m+++++++++++++++++++++[m
+ .../terraform-provider-aws_v5.100.0_x5.exe         | Bin [31m0[m -> [32m718820352[m bytes
+ .../cloudinit/2.3.7/windows_amd64/LICENSE.txt      | 375 [32m+++++++++++++++++++++[m
+ .../terraform-provider-cloudinit_v2.3.7_x5.exe     | Bin [31m0[m -> [32m16006496[m bytes
+ .../hashicorp/null/3.2.4/windows_amd64/LICENSE.txt | 375 [32m+++++++++++++++++++++[m
+ .../terraform-provider-null_v3.2.4_x5.exe          | Bin [31m0[m -> [32m15866712[m bytes
+ .../time/0.13.1/windows_amd64/LICENSE.txt          | 375 [32m+++++++++++++++++++++[m
+ .../terraform-provider-time_v0.13.1_x5.exe         | Bin [31m0[m -> [32m16072032[m bytes
+ .../hashicorp/tls/4.2.1/windows_amd64/LICENSE.txt  | 375 [32m+++++++++++++++++++++[m
+ .../terraform-provider-tls_v4.2.1_x5.exe           | Bin [31m0[m -> [32m19264136[m bytes
+ .../eks-vpc-cluster/.terraform/terraform.tfstate   |  55 [32m+++[m
+ lesson-5-6/eks-vpc-cluster/README.md               |  95 [32m++++++[m
+ lesson-5-6/eks-vpc-cluster/backend.tf              |   9 [32m+[m
+ lesson-5-6/eks-vpc-cluster/eks/main.tf             |  31 [32m++[m
+ lesson-5-6/eks-vpc-cluster/eks/outputs.tf          |   7 [32m+[m
+ lesson-5-6/eks-vpc-cluster/eks/variables.tf        |  23 [32m++[m
+ lesson-5-6/eks-vpc-cluster/main.tf                 |  15 [32m+[m
+ lesson-5-6/eks-vpc-cluster/outputs.tf              |   7 [32m+[m
+ lesson-5-6/eks-vpc-cluster/terraform.tf            |  15 [32m+[m
+ lesson-5-6/eks-vpc-cluster/variables.tf            |  11 [32m+[m
+ lesson-5-6/eks-vpc-cluster/vpc/main.tf             |  18 [32m+[m
+ lesson-5-6/eks-vpc-cluster/vpc/outputs.tf          |  11 [32m+[m
+ lesson-5-6/eks-vpc-cluster/vpc/terraform.tf        |   7 [32m+[m
+ lesson-5-6/eks-vpc-cluster/vpc/variables.tf        |   6 [32m+[m
+ ...\320\260\320\275\320\260 2026-03-01 202948.png" | Bin [31m0[m -> [32m35576[m bytes
+ 31 files changed, 2306 insertions(+)
+[33m0864c1b[m[33m ([m[1;31morigin/lesson-3[m[33m, [m[1;32mlesson-3[m[33m)[m Add lesson-3: TorchScript model, Dockerfiles, report
+ Dockerfile.fat       |  14 [32m++++++++++++++[m
+ Dockerfile.slim      |  20 [32m++++++++++++++++++++[m
+ README.md            |  11 [32m+++++++++++[m
+ comparison.txt       |  20 [32m++++++++++++++++++++[m
+ export_model.py      |  17 [32m+++++++++++++++++[m
+ inference.py         |  29 [32m+++++++++++++++++++++++++++++[m
+ install_dev_tools.sh |  38 [32m++++++++++++++++++++++++++++++++++++++[m
+ model.pt             | Bin [31m0[m -> [32m14508655[m bytes
+ 8 files changed, 149 insertions(+)
