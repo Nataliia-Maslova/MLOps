@@ -1,0 +1,4 @@
+.env
+venv/
+best_model/
+__pycache__/
