@@ -16,7 +16,7 @@ Grafana – visualization of experiment metrics
 
 The infrastructure is deployed automatically via ArgoCD Applications.
 
-Project Structure
+## Project Structure
 mlops-experiments/
 ├── argocd/
 │   ├── applications/
@@ -30,7 +30,8 @@ mlops-experiments/
 ├── best_model/
 │   └── <model> # will appear after successfull launch
 └── README.md
-Infrastructure Components
+
+## Infrastructure Components
 MLflow
 
 Tracks experiments, parameters, metrics, and stores trained models.
