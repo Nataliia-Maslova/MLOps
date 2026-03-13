@@ -18,17 +18,21 @@ The infrastructure is deployed automatically via ArgoCD Applications.
 
 ## Project Structure
 mlops-experiments/
+│
 ├── argocd/
-│   ├── applications/
-│   │   ├── mlflow.yaml
-│   │   ├── minio.yaml
-│   │   ├── postgres.yaml
-│   │   └── pushgateway.yaml
+│ └── applications/
+│ ├── mlflow.yaml
+│ ├── minio.yaml
+│ ├── postgres.yaml
+│ └── pushgateway.yaml
+│
 ├── experiments/
-│   ├── train_and_push.py
-│   └── requirements.txt
+│ ├── train_and_push.py
+│ └── requirements.txt
+│
 ├── best_model/
-│   └── <model> # will appear after successfull launch
+│ └── # will appear after successful launch
+│
 └── README.md
 
 ## Infrastructure Components
