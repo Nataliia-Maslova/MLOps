@@ -5,6 +5,26 @@
 
 Цей проєкт реалізує end-to-end MLOps pipeline для inference сервісу з контролем якості моделі.
 
+aiops-quality-project/
+├── app/
+│  └── main.py         # FastAPI‑інференс
+├── model/
+│  └── train.py         # Скрипт для retrain
+├── helm/
+│  ├── Chart.yaml
+│  ├── values.yaml
+├── argocd/
+│  └── application.yaml
+├── .gitlab-ci.yml
+├── grafana/
+│  └── dashboards.json
+├── prometheus/
+│  └── additionalScrapeConfigs.yaml
+├── loki/
+│   ├── loki-config.yaml
+│   └── promtail-config.yaml
+├── README.md
+
 # Основні компоненти:
 
 FastAPI — inference API для моделі
