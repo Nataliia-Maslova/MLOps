@@ -1,0 +1,32 @@
+{
+  "title": "AIOps Dashboard",
+  "panels": [
+    {
+      "title": "Predictions per second",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "rate(predictions_total[1m])"
+        }
+      ]
+    },
+    {
+      "title": "Latency",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "rate(predict_latency_seconds_sum[1m])"
+        }
+      ]
+    },
+    {
+      "title": "Drift events",
+      "type": "graph",
+      "targets": [
+        {
+          "expr": "rate(drift_detected_total[1m])"
+        }
+      ]
+    }
+  ]
+}
